@@ -20,7 +20,7 @@ Sample GitHub Event - Branch Proection Destroy:
 {
 	"_document_id": "TW0bUcX1kShMfQcgbVHJoA",
 	"action": "protected_branch.destroy",
-	"actor": "kwestin",
+	"actor": "lemmy-heavymetals",
 	"actor_id": "1696440",
 	"actor_location": {
 		"country_code": "US"
