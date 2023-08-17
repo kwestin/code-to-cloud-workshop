@@ -1,5 +1,5 @@
 
-# Welcome to Purple Teaming with Detection-as-Code for Modern SIEM
+# Code-to-Cloud: Securing the Software Supply Chain Workshop
 
 This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
 
