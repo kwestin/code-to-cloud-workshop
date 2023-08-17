@@ -3,6 +3,18 @@
 
 This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
 
+
+
+
+
+Lab 1: New Invite
+
+Lab 2: User priv escalation
+
+Lab 3: Remove protected branch
+
+Lab 4: Make public
+
 ## Lab 1 - Writing Our First Detection
 
 Using the rule function and other pre-existing helper functions, creating a detection is extremely efficient in Panther. For this exercise, you will use the Panther console to create your first detection.
