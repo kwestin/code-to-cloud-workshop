@@ -39,7 +39,7 @@ Sample GitHub Event - Branch Proection Destroy:
 		"1696440"
 	],
 	"p_any_usernames": [
-		"kwestin"
+		"lemmy-heavymetals"
 	],
 	"p_event_time": "2023-08-15 20:31:05.594",
 	"p_log_type": "GitHub.Audit",
