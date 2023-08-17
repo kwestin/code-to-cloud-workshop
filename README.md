@@ -57,3 +57,17 @@ Sample GitHub Event - Branch Proection Destroy:
 	"user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
 }
 ```
+
+   ``` python
+def rule(event):
+    return event.get("action") == "protected_branch.destroy"
+
+
+def title(event):
+    return (
+        f"A branch protection was removed from the "
+        f"repository [{event.get('repo', '<UNKNOWN_REPO>')}] "
+        f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
+    )
+    
+    ```
