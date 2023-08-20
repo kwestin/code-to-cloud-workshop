@@ -20,7 +20,7 @@ Using the rule function and other pre-existing helper functions, creating a dete
 
 ### Lab 1- Exercise 1
 
-In this exercise, we will create our first detection using Python in Panther. We want to create a medium-priority alert if a new invite to our GitHub organization is sent. You can find a sample log event under "Investigate -> Query Builder" or use this sample event for your unit test. 
+In this exercise, we will create our first detection using Python in Panther. We want to create a low-priority alert if a new invite to our GitHub organization is sent. You can find a sample log event under "Investigate -> Query Builder" or use this sample event for your unit test. 
 
 ``` json
 {
@@ -65,7 +65,7 @@ In this exercise, we will create our first detection using Python in Panther. We
 3. Under "Basic Info" enter a name in the "Name" field your new detection starting with your name. Example: "[YOUR NAME]'s New GitHub Invite"
 4. Click "Next"
 5. Under "Log Types" type in "Okta" and select "Okta.SystemLog"
-6. Under "Set Alert Field" set the "Severity" to "Medium"
+6. Under "Set Alert Field" set the "Severity" to "Low"
 7. Next scroll down to "Unit Test" and click "Add New" copy and past the above sample JSON or from the "Investigation -> Query Builder" and past.
 8. Write a detection with the ```rule()``` function hint look for the "action" and "operation_type" elements in the JSON
 9. Next let's add more context to the alert using the ```def title``` function so that it says "A new invite was sent to [user] by [actor] for org [org name]
