@@ -92,8 +92,86 @@ def title(event):
 
 Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the JSON evnets for  ***Invite Member***, ***Add Member***, and ***Update Member*** all follow the same format. Let's add the two additional JSON events as unit tests and see if we can write one detection to ***Rule them all!***. We will also use the ```severity()``` function to increase the severity of the alert depending on the action taken. 
 
+ 1. Go back to the detection you have made and change the title to "[YOUR NAME]'s GitHub New User Activity" to make it more generic.
+ 2. Name the ***Unit Test*** you just created for the "org.invite_member" and rename the tab "Invite"
+ 3. Create two new ***Unit Test*** tabs for "Add Member" and another for "Modify Member"
+ 4. Either go to "Investigation -> Query Builder" and find the GitHub events for "org.add_member" and "org.update_member" and or copy and past the samples here:
 
+#### Add Member JSON Event
+``` json
+{
+	"_document_id": "S8M5F0HvalWi_7wMb8j6dA",
+	"action": "org.add_member",
+	"actor": "lemmy-heavymetals",
+	"actor_id": "142338540",
+	"at_sign_timestamp": "2023-08-17 22:07:16.263",
+	"business": "heavy-metals",
+	"business_id": "66164",
+	"created_at": "2023-08-17 22:07:16.263",
+	"operation_type": "create",
+	"org": "heavymetalsio",
+	"org_id": 141669676,
+	"p_any_actor_ids": [
+		"142338540",
+		"142546341"
+	],
+	"p_any_usernames": [
+		"dio-heavymetals",
+		"lemmy-heavymetals"
+	],
+	"p_event_time": "2023-08-17 22:07:16.263",
+	"p_log_type": "GitHub.Audit",
+	"p_parse_time": "2023-08-17 22:18:35.235",
+	"p_row_id": "5e9f2dc3eb9f90e28fd7bc831a07",
+	"p_schema_version": 0,
+	"p_source_id": "6a05d4a5-e080-4211-8f5c-b23f7c0f9437",
+	"p_source_label": "Heavy MEtals",
+	"p_timeline": "2023-08-17 22:07:16.263",
+	"user": "dio-heavymetals",
+	"user_id": "142546341"
+}
 
+```
+#### Modify Member JSON Event
+
+``` json
+{
+	"_document_id": "24WJD3hWZWfLn5HKKqRW_w",
+	"action": "org.update_member",
+	"actor": "lemmy-heavymetals",
+	"actor_id": "142338540",
+	"actor_location": {
+		"country_code": "US"
+	},
+	"at_sign_timestamp": "2023-08-17 22:19:49.374",
+	"business": "heavy-metals",
+	"business_id": "66164",
+	"created_at": "2023-08-17 22:19:49.374",
+	"operation_type": "modify",
+	"org": "heavymetalsio",
+	"org_id": 141669676,
+	"p_any_actor_ids": [
+		"142338540",
+		"142546341"
+	],
+	"p_any_usernames": [
+		"dio-heavymetals",
+		"lemmy-heavymetals"
+	],
+	"p_event_time": "2023-08-17 22:19:49.374",
+	"p_log_type": "GitHub.Audit",
+	"p_parse_time": "2023-08-17 22:31:35.156",
+	"p_row_id": "5e9f2dc3eb9f90e28fd7bc831a0f",
+	"p_schema_version": 0,
+	"p_source_id": "6a05d4a5-e080-4211-8f5c-b23f7c0f9437",
+	"p_source_label": "Heavy MEtals",
+	"p_timeline": "2023-08-17 22:19:49.374",
+	"user": "dio-heavymetals",
+	"user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+	"user_id": "142546341"
+}
+
+```
 
 Sample GitHub Event - Branch Proection Destroy:
   
