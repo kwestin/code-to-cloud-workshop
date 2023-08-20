@@ -57,17 +57,20 @@ Using the rule function and other pre-existing helper functions, creating a dete
 }
 ```
 
+
    ``` python
 def rule(event):
-    return event.get("action") == "org.invite_member" and event.get("operation_type") == "create" 
+    return event.get("action") == "protected_branch.destroy"
+
 
 def title(event):
     return (
-        f"A new invite was sent to [{event.get('user', '<UNKNOWN_USER>')}] by "
+        f"A branch protection was removed from the "
+        f"repository [{event.get('repo', '<UNKNOWN_REPO>')}] "
         f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
-        f" for org [{event.get('org', '<UNKNOWN_ORG>')}]"
     )
-
+    
+    ```
     ```
 
 
