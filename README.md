@@ -84,6 +84,8 @@ def title(event):
     
  ```
 
+9. Next let's add more context to the alert using the ```def title``` function so that it says "A new invite was sent to [user] by [actor] for org [org name]
+
 
 ## Lab 2: User priv escalation
 
