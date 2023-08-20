@@ -259,7 +259,7 @@ Sample GitHub Event - Branch Protection Destroy:
 
 ```
 
-   ``` python
+``` python
 def rule(event):
     return event.get("action") == "protected_branch.destroy"
 
@@ -271,6 +271,54 @@ def title(event):
         f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
     )
     
-    ```
+```
 
 ### Lab 3 Exercise 2
+
+## Lab 4 - AWS 
+
+``` json
+
+{
+"accountId": "123456789012",
+"arn": "arn:aws:guardduty:us-west-2:123456789012:detector/111111bbbbbbbbbb5555555551111111/finding/90b82273685661b9318f078d0851fe9a",
+"createdAt": "2020-02-14T18:12:22.316Z",
+"description": "Principal AssumedRole:IAMRole attempted to add a highly permissive policy to themselves.",
+"id": "eeb88ab56556eb7771b266670dddee5a",
+"partition": "aws",
+"region": "us-east-1",
+"schemaVersion": "2.0",
+"service": {
+	"action": {
+		"actionType": "AWS_API_CALL",
+		"awsApiCallAction": {
+			"affectedResources": {
+				"AWS::IAM::Role": "arn:aws:iam::123456789012:role/IAMRole"
+			},
+			"api": "PutRolePolicy",
+			"callerType": "Domain",
+			"domainDetails": {
+				"domain": "cloudformation.amazonaws.com"
+			},
+			"serviceName": "iam.amazonaws.com"
+		}
+	},
+	"additionalInfo": {},
+	"archived": false,
+	"count": 1,
+	"detectorId": "111111bbbbbbbbbb5555555551111111",
+	"eventFirstSeen": "2020-02-14T17:59:17Z",
+	"eventLastSeen": "2020-02-14T17:59:17Z",
+	"evidence": null,
+	"resourceRole": "TARGET",
+	"serviceName": "guardduty"
+},
+"severity": 8,
+"title": "Principal AssumedRole:IAMRole attempted to add a policy to themselves that is highly permissive.",
+"type": "PrivilegeEscalation:IAMUser/AdministrativePermissions",
+"updatedAt": "2020-02-14T18:12:22.316Z"
+}
+
+```
+
+
