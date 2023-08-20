@@ -173,7 +173,16 @@ Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the 
 
 ```
 
-Sample GitHub Event - Branch Proection Destroy:
+
+===============
+
+
+
+
+
+
+
+Sample GitHub Event - Branch Protection Destroy:
   
 ``` json
 {
