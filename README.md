@@ -9,6 +9,58 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 Lab 1: New Invite
 
+Exercise 1
+
+``` json
+{
+	"_document_id": "wDBpTX1LrspfiwTEv1LKjw",
+	"action": "org.invite_member",
+	"actor": "lemmy-heavymetals",
+	"actor_id": "142338540",
+	"actor_location": {
+		"country_code": "US"
+	},
+	"at_sign_timestamp": "2023-08-17 22:06:14.96",
+	"business": "heavy-metals",
+	"business_id": "66164",
+	"created_at": "2023-08-17 22:06:14.96",
+	"operation_type": "create",
+	"org": "heavymetalsio",
+	"org_id": 141669676,
+	"p_any_actor_ids": [
+		"142338540",
+		"142546341"
+	],
+	"p_any_usernames": [
+		"dio-heavymetals",
+		"lemmy-heavymetals"
+	],
+	"p_event_time": "2023-08-17 22:06:14.96",
+	"p_log_type": "GitHub.Audit",
+	"p_parse_time": "2023-08-17 22:17:35.475",
+	"p_row_id": "76ebfa5fb2e5c5a8b3b5bf831a01",
+	"p_schema_version": 0,
+	"p_source_id": "6a05d4a5-e080-4211-8f5c-b23f7c0f9437",
+	"p_source_label": "Heavy MEtals",
+	"p_timeline": "2023-08-17 22:06:14.96",
+	"user": "dio-heavymetals",
+	"user_id": "142546341"
+}
+```
+
+   ``` python
+def rule(event):
+    return event.get("action") == "org.invite_member" and event.get("operation_type") == "create" 
+
+def title(event):
+    return (
+        f"A new invite was sent to [{event.get('user', '<UNKNOWN_USER>')}] by "
+        f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
+        f" for org [{event.get('org', '<UNKNOWN_ORG>')}]"
+    )
+    ```
+
+
 Lab 2: User priv escalation
 
 Lab 3: Remove protected branch
