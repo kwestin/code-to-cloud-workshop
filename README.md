@@ -88,7 +88,9 @@ def title(event):
 
 </details>
 
+### Lab 1- Exercise 2
 
+Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the ***Invite***
 
 
 
