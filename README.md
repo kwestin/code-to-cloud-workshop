@@ -67,6 +67,7 @@ def title(event):
         f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
         f" for org [{event.get('org', '<UNKNOWN_ORG>')}]"
     )
+
     ```
 
 
