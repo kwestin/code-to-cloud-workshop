@@ -71,7 +71,7 @@ In this exercise, we will create our first detection using Python in Panther. We
 
 
 <details>
-<summary> Sample Okta Event </summary>
+<summary> View Answer for Lab 1  - Exercise 1</summary>
 	
 ``` python
 def rule(event):
