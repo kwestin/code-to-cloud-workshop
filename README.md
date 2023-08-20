@@ -172,7 +172,9 @@ Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the 
 }
 
 ```
-
+5. Modify the detection so that if the ```action``` value is ```org.invite_member```, ```org.add_member```, or ```org.update_member``` the alert will trigger
+6. Modify the ```title()``` function so that it returns a value that makes sense based on the value of the ```action``` parameter.
+7. Add the ```severity()``` function so it returns a different severity depending on the value of the ```action``` parameter
 
 ===============
 
