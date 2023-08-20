@@ -70,8 +70,9 @@ In this exercise, we will create our first detection using Python in Panther. We
 8. Write a detection with the ```def rule()``` function hint look for the "action" and "operation_type" elements in the JSON
 
 
-	<details>
-		<summary> Sample Okta Event </summary>
+<details>
+<summary> Sample Okta Event </summary>
+	
 ``` python
 def rule(event):
     return event.get("action") == "org.invite_member" and event.get("operation_type") == "create" 
@@ -84,6 +85,7 @@ def title(event):
     )
     
  ```
+
 </details>
 
 9. Next let's add more context to the alert using the ```def title``` function so that it says "A new invite was sent to [user] by [actor] for org [org name]
