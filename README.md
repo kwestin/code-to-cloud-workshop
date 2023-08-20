@@ -17,9 +17,6 @@ Using the rule function and other pre-existing helper functions, creating a dete
 - [What is Deep_Get?](https://docs.panther.com/writing-detections/globals#deep_get)
 
 
-
-### Lab 1- Exercise 1
-
 In this exercise, we will create our first detection using Python in Panther using GitHub as our data source. We will start by creating a low-priority alert if a new invite to our GitHub organization is sent. You can find a sample log event under "Investigate -> Query Builder" or use this sample event for your unit test. 
 
 ``` json
@@ -88,7 +85,7 @@ def title(event):
 
 </details>
 
-### Lab 1- Exercise 2
+## Lab -2 
 
 Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the JSON evnets for  ***Invite Member***, ***Add Member***, and ***Update Member*** all follow the same format. Let's add the two additional JSON events as unit tests and see if we can write one detection to ***Rule them all!***. We will also use the ```severity()``` function to increase the severity of the alert depending on the action taken. 
 
@@ -209,7 +206,7 @@ def title(event):
 </details>
 
 
-## Lab 2 -  
+## Lab 3 -  
 
 
 
