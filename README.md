@@ -58,7 +58,7 @@ Using the rule function and other pre-existing helper functions, creating a dete
 
 ```
 
-   ``` python
+``` python
 def rule(event):
     return event.get("action") == "protected_branch.destroy"
 
@@ -70,11 +70,11 @@ def title(event):
         f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
     )
     
-    ```
+ ```
 
 
 ## Lab 2: User priv escalation
-##
+
 ##Lab 3: Remove protected branch
 
 ##Lab 4: Make public
@@ -132,6 +132,7 @@ Sample GitHub Event - Branch Proection Destroy:
 	"required_status_checks_enforcement_level": 0,
 	"user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
 }
+
 ```
 
    ``` python
