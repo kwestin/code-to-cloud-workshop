@@ -5,7 +5,7 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 
 
-## Lab 1 - Writing Our First Detection
+## Lab 1 - Writing Our First Detection & Expanding Detections for Multiple Events 
 
 Using the rule function and other pre-existing helper functions, creating a detection is extremely efficient in Panther. For this exercise, you will use the Panther console to create your first detection.
 
