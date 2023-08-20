@@ -262,8 +262,7 @@ Sample GitHub Event - Branch Protection Destroy:
 	"pull_request_reviews_enforcement_level": 0,
 	"repo": "heavymetalsio/metal-trader",
 	"repo_id": 678958857,
-	"required_status_checks_enforcement_level": 0,
-	"user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+	"required_status_checks_enforcement_level": 0
 }
 
 ```
