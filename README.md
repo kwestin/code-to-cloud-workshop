@@ -5,11 +5,20 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 
 
+## Lab 1 - Writing Our First Detection
+
+Using the rule function and other pre-existing helper functions, creating a detection is extremely efficient in Panther. For this exercise, you will use the Panther console to create your first detection.
+
+### Terms we'll reference
+
+- [All Available Rule Functions](https://github.com/panther-labs/panther-analysis/blob/master/templates/example_rule.py)
+- [What is a rule?](https://docs.panther.com/writing-detections/rules)
+- [What are Helpers?](https://docs.panther.com/writing-detections/globals?q=helpers)
+- [What is Deep_Get?](https://docs.panther.com/writing-detections/globals#deep_get)
 
 
-Lab 1: New Invite
 
-Exercise 1
+### Exercise 1
 
 ``` json
 {
@@ -61,11 +70,11 @@ def title(event):
     ```
 
 
-Lab 2: User priv escalation
+## Lab 2: User priv escalation
+##
+##Lab 3: Remove protected branch
 
-Lab 3: Remove protected branch
-
-Lab 4: Make public
+##Lab 4: Make public
 
 ## Lab 1 - Writing Our First Detection
 
