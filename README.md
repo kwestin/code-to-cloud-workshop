@@ -215,10 +215,6 @@ Now we will leverage the power of Panther's Security Data Lake
 
 
 
-
-
-
-
 Sample GitHub Event - Branch Protection Destroy:
   
 ``` json
@@ -276,3 +272,5 @@ def title(event):
     )
     
     ```
+
+### Lab 3 Exercise 2
