@@ -66,6 +66,8 @@ In this exercise, we will create our first detection using Python in Panther. We
 4. Click "Next"
 5. Under "Log Types" type in "Okta" and select "Okta.SystemLog"
 6. Under "Set Alert Field" set the "Severity" to "Medium"
+7. Next scroll down to "Unit Test" and click "Add New" copy and past the above sample JSON or from the "Investigation -> Query Builder" and past.
+8. Write a detection with the ```def rule()``` function hint look for the "action" and "operation_type" elements in the JSON
 
 
 
