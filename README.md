@@ -55,8 +55,8 @@ Using the rule function and other pre-existing helper functions, creating a dete
 	"user": "dio-heavymetals",
 	"user_id": "142546341"
 }
-```
 
+```
 
    ``` python
 def rule(event):
@@ -70,7 +70,6 @@ def title(event):
         f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
     )
     
-    ```
     ```
 
 
