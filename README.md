@@ -167,7 +167,6 @@ Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the 
 	"p_source_label": "Heavy MEtals",
 	"p_timeline": "2023-08-17 22:19:49.374",
 	"user": "dio-heavymetals",
-	"user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
 	"user_id": "142546341"
 }
 
