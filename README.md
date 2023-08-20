@@ -18,7 +18,9 @@ Using the rule function and other pre-existing helper functions, creating a dete
 
 
 
-### Exercise 1
+### Lab 1- Exercise 1
+
+In this exercise, we will create our first detection using Python in Panther. We want to create a low priority alert if a new invite to our GitHub organization is sent. You can find a sample log event under "Investigate -> Query Builder" or use this sample event for your unit test. 
 
 ``` json
 {
@@ -57,6 +59,12 @@ Using the rule function and other pre-existing helper functions, creating a dete
 }
 
 ```
+
+1. In the Panther Console, navigate to Build > Detections > Create New
+2. Select "Rule"
+3. Under "Basic" Info create enter a name for your new detection starting with your name. Example: "[YOUR NAME]'s New "
+
+
 
 ``` python
 def rule(event):
