@@ -5,7 +5,7 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 
 
-## Lab 1 - Writing Our First Detection & Expanding Detections for Multiple Events 
+## Lab 1 - Writing Our First Detection 
 
 Using the rule function and other pre-existing helper functions, creating a detection is extremely efficient in Panther. For this exercise, you will use the Panther console to create your first detection.
 
@@ -85,7 +85,7 @@ def title(event):
 
 </details>
 
-## Lab -2 
+## Lab - 2 Expanding Detections for Multiple Events with Unit Tests
 
 Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the JSON evnets for  ***Invite Member***, ***Add Member***, and ***Update Member*** all follow the same format. Let's add the two additional JSON events as unit tests and see if we can write one detection to ***Rule them all!***. We will also use the ```severity()``` function to increase the severity of the alert depending on the action taken. 
 
