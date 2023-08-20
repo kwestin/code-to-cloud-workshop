@@ -205,7 +205,7 @@ def title(event):
  ```
 
 </details>
-10. Let's also add a negative test, copy one of the JSON samples and create a new unit test tab with the name 'Null' and replace the ```action``` value as just "null"
+10. Let's also add a negative test, copy one of the JSON samples and create a new unit test tab with the name 'Null' and replace the ***action*** value as just "null"
 
 
 
