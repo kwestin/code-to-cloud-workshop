@@ -206,13 +206,12 @@ def title(event):
 </details>
 
 
-## Lab 3 -  
+## Lab 3 -  Protected Branch Destroy and Repo Visibility
 
 
+### Lab 3 Exercise 1
 
-
-
-===============
+Now we will leverage the power of Panther's Security Data Lake
 
 
 
