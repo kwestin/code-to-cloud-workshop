@@ -175,7 +175,7 @@ Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the 
 7. Modify the ```title()``` function so that it returns a value that makes sense based on the value of the ```action``` parameter.
 8. Add the ```severity()``` function so it returns a different severity depending on the value of the ```action``` parameter (```invite_member``` = LOW, ```add_member``` = MEDIUM and ```update_member``` = HIGH)
 9. To run all unit tests press the ***Run All*** button, you should see a list of tests with increasing severities.
-
+10. Let's also add a negative test, copy one of the JSON samples and create a new unit test tab with the name 'Null' and replace the ```action``` value in the JSON for the unit test as just "null"
 
 <details>
 <summary> View Example Answer  </summary>
@@ -205,8 +205,6 @@ def title(event):
  ```
 
 </details>
-
-10. Let's also add a negative test, copy one of the JSON samples and create a new unit test tab with the name 'Null' and replace the ```action``` value in the JSON for the unit test as just "null"
 
 ![Unit Tests](/img/unit_tests_L1E2.png)  
 
