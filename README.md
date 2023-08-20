@@ -275,7 +275,7 @@ def title(event):
 
 ### Lab 3 Exercise 2
 
-## Lab 4 - AWS 
+## Lab 4 - Modifying Existing Rules with AWS 
 
 ``` json
 
