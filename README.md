@@ -174,7 +174,40 @@ Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the 
 5. Modify the detection so that if the ```action``` value is ```org.invite_member```, ```org.add_member```, or ```org.update_member``` the alert will trigger
 6. Modify the ```title()``` function so that it returns a value that makes sense based on the value of the ```action``` parameter.
 7. Add the ```severity()``` function so it returns a different severity depending on the value of the ```action``` parameter (```invite_member``` = LOW, ```add_member``` = MEDIUM and ```update_member``` = HIGH)
-8. To run all unit tests press the ***Run All*** button, you should see a list of tests with increasing severities. 
+8. To run all unit tests press the ***Run All*** button, you should see a list of tests with increasing severities.
+
+
+<details>
+<summary> View Example Answer  </summary>
+	
+``` python
+def rule(event):
+    return event.get("action") == "org.invite_member" or event.get("action") == "org.add_member" or event.get("action") == "org.update_member"
+    
+
+def severity(event):
+    if event.get("action") == "org.invite_member":
+        return "LOW"
+    if  event.get("action") == "org.add_member":
+        return "MEDIUM"
+    if event.get("action") == "org.update_member":
+        return "HIGH"
+    else: 
+        return "INFO"
+
+def title(event):
+    return (
+        f"A [{event.get('action', '<UNKNOWN_ACTION>')}] action was created [{event.get('user', '<UNKNOWN_USER>')}] "
+        f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
+        f" for org [{event.get('org', '<UNKNOWN_ORG>')}]"
+    )
+    
+
+
+    
+ ```
+
+</details>
 
 ===============
 
