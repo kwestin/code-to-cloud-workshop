@@ -207,7 +207,7 @@ def title(event):
 ## Lab 3 -  Protected Branchs and Repo Visibility
 
 
-### Lab 3 Exercise 1
+### Lab 3 Exercise 1: Protected Branches
 
 Now we will leverage the power of Panther's Security Data Lake to dig into potentially malicious activity and write a detection from scratch. 
 
@@ -294,7 +294,7 @@ Sample GitHub Event - Branch Protection Destroy:
 
 -->
 
-### Lab 3 Exercise 2
+### Lab 3 Exercise 2: Repo Visibility
 Another particularly risky action that can be taken against our repo with privileged accounts is the repository visibility. This could be done by a malicious actor, or insider threat and is something that should be monitored closely.  Following the similar process as the last exercise, find the event where the visibility was changed in our repo to public. In the alert include the repository and actor. 
 
 1. We want to identify the event where the repository was made public
