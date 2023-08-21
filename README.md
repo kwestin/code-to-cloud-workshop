@@ -177,7 +177,7 @@ Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the 
 ![Unit Tests](/img/unit_tests_L1E2.png)  
 
 <details>
-<summary> View Lsb 2 Answer  </summary>
+<summary> View Lab 2 Answer  </summary>
 	
 ``` python
 def rule(event):
@@ -231,7 +231,7 @@ Both the "actor" and "repo" elements will provide the context.
 
 
 <details>
-<summary>  Answer Lab 3 Exercise 1 </summary>
+<summary>  View Lab 3 Exercise 1 Answer  </summary>
 	
 ``` python
 def rule(event):
