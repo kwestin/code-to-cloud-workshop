@@ -279,7 +279,9 @@ Sample GitHub Event - Branch Protection Destroy:
 ```
 
 -->
-
+<details>
+<summary>  Answer Lab 3 Exercise 1 </summary>
+	
 ``` python
 def rule(event):
     return event.get("action") == "protected_branch.destroy"
@@ -293,6 +295,9 @@ def title(event):
     )
     
 ```
+
+</details>
+
 
 ### Lab 3 Exercise 2
 
