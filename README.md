@@ -216,11 +216,19 @@ Now we will leverage the power of Panther's Security Data Lake to dig into poten
 1. We will start with our Security Data Lake; please navigate in the Panther console to "Investigate -> Query Builder" and let's search for recent events that occurred in GitHub
 2. One key set of security controls that GitHub provides is the ability to protect branches; this defines roles and whether collaborators can delete/modify/branches as well as requirements for pushes to the branch. If branch protection is deleted, it opens the code up for potential issues.
 3. Find the log event where branch protection was destroyed and use that event as a unit test for writing a new detection.
+4. Use the ```title()``` function to provide additional context in the alert title, including the repository and actor. 
 
 <details>
 <summary> Hint 1: </summary>
 Look for the action "protected_branch.destroy"
-</details
+</details>
+
+
+<details>
+<summary> Hint 2: </summary>
+Both the ***actor*** and ***repo*** elements will provide the context.
+</details>
+
 
 
 
