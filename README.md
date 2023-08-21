@@ -1,9 +1,7 @@
 
 # Code-to-Cloud: Securing the Software Supply Chain Workshop
 
-This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
-
-
+This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator. 
 
 ## Lab 1 - Writing Our First Detection 
 
@@ -206,7 +204,7 @@ def title(event):
 </details>
 
 
-## Lab 3 -  Protected Branch Destroy and Repo Visibility
+## Lab 3 -  Protected Branchs and Repo Visibility
 
 
 ### Lab 3 Exercise 1
@@ -214,8 +212,8 @@ def title(event):
 Now we will leverage the power of Panther's Security Data Lake to dig into potentially malicious activity and write a detection from scratch. 
 
 1. We will start with our Security Data Lake; please navigate in the Panther console to "Investigate -> Query Builder" and let's search for recent events that occurred in GitHub
-2. One key set of security controls that GitHub provides is the ability to protect branches; this defines roles and whether collaborators can delete/modify/branches as well as requirements for pushes to the branch. If branch protection is deleted, it opens the code up for potential issues.
-3. Find the log event where branch protection was destroyed and use that event as a unit test for writing a new detection.
+2. One key set of security controls that GitHub provides is the ability to protect branches; this defines roles and whether collaborators can delete/modify/branches as well as requirements for pushes to the branch. If branch protection is deleted, it opens the code up for potential issues. Find the log event where branch protection was destroyed and use that event as a unit test for writing a new detection.
+3. Name your new detection "[Your Name]'s Protected Branch Destroy" 
 4. Use the ```title()``` function to provide additional context in the alert title, including the repository and actor. 
 
 <details>
@@ -296,10 +294,85 @@ Sample GitHub Event - Branch Protection Destroy:
 
 -->
 
-
-
-
 ### Lab 3 Exercise 2
+Another particularly risky action that can be taken against our repo with privileged accounts is the repository visibility. This could be done by a malicious actor, or insider threat and is something that should be monitored closely.  Following the similar process as the last exercise, find the event where the visibility was changed in our repo to public. In the alert include the repository and actor. 
+
+1. We want to identify the event where the repository was made public
+2. In the title of the alert we want to pass the previous visibility state, its new state, the actor who made the change
+3. Name the new detection "[Your Name]'s Visibility Public Change"
+4. Set the severity to "High" if the alert was triggered by our approved admin "lemmy-heavymetals," but "Critical" if it is any other user
+
+<details>
+<summary> Hint 1: </summary>
+We will want to look for a combination of parameters to identify if the alert should be triggered
+</details>
+
+
+<details>
+<summary>  View Lab 3 Exercise 2 Answer  </summary>
+
+``` python
+
+def rule(event):
+    return event.get("action") == "repo.access" and event.get("operation_type") == "modify" and event.get("visibility") == "public"
+
+
+def severity(event):
+    if event.get('actor') == "lemmy-heavymetals":
+        return "HIGH"
+    else:
+        return "CRITICAL"
+
+def title(event):
+    return (
+        f"The [{event.get('repo', '<UNKNOWN_REPO>')}] repo which was previously [{event.get('previous_visibility', '<UNKNOWN_REPO>')}] has been made public  "
+        f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
+    )
+
+
+```
+
+</details>
+
+<!--
+``` json
+{
+	"_document_id": "6fQbM6CEimmzHkSOptB9wA",
+	"action": "repo.access",
+	"actor": "lemmy-heavymetals",
+	"actor_id": "142338540",
+	"at_sign_timestamp": "2023-08-21 19:49:56.321",
+	"business": "heavy-metals",
+	"business_id": "66164",
+	"created_at": "2023-08-21 19:49:56.321",
+	"operation_type": "modify",
+	"org": "heavymetalsio",
+	"org_id": 141669676,
+	"p_any_actor_ids": [
+		"142338540"
+	],
+	"p_any_usernames": [
+		"lemmy-heavymetals"
+	],
+	"p_event_time": "2023-08-21 19:49:56.321",
+	"p_log_type": "GitHub.Audit",
+	"p_parse_time": "2023-08-21 20:01:35.158",
+	"p_row_id": "f6515b4d90e8afa7998ca98d1a04",
+	"p_schema_version": 0,
+	"p_source_id": "6a05d4a5-e080-4211-8f5c-b23f7c0f9437",
+	"p_source_label": "Heavy MEtals",
+	"p_timeline": "2023-08-21 19:49:56.321",
+	"previous_visibility": "private",
+	"public_repo": true,
+	"repo": "heavymetalsio/metal-trader",
+	"repo_id": 678958857,
+	"visibility": "public"
+}
+
+```
+-->
+
+
 
 ## Lab 4 - Modifying Existing Rules with AWS 
 
