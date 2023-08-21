@@ -230,7 +230,23 @@ Both the "actor" and "repo" elements will provide the context.
 </details>
 
 
+<details>
+<summary>  Answer Lab 3 Exercise 1 </summary>
+	
+``` python
+def rule(event):
+    return event.get("action") == "protected_branch.destroy"
 
+
+def title(event):
+    return (
+        f"A branch protection was removed from the "
+        f"repository [{event.get('repo', '<UNKNOWN_REPO>')}] "
+        f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
+    )
+    
+```
+</details>
 
 
 <!--
@@ -279,24 +295,8 @@ Sample GitHub Event - Branch Protection Destroy:
 ```
 
 -->
-<details>
-<summary>  Answer Lab 3 Exercise 1 </summary>
-	
-``` python
-def rule(event):
-    return event.get("action") == "protected_branch.destroy"
 
 
-def title(event):
-    return (
-        f"A branch protection was removed from the "
-        f"repository [{event.get('repo', '<UNKNOWN_REPO>')}] "
-        f"by [{event.get('actor', '<UNKNOWN_ACTOR>')}]"
-    )
-    
-```
-
-</details>
 
 
 ### Lab 3 Exercise 2
