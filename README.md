@@ -427,10 +427,12 @@ def title(event):
 }
 ```
 
-
 4. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
+
 5. Modify the rule function to alert on events from severity 1 to 10
+
 6. To reduce noise of this detection, use the severity function to create dynamic categorization of alerts
+
 7. Use an IF statement to send severity 5 and below alerts to "INFO" level and 8 and above to "HIGH". For any other severity, return "MEDIUM"
 
 <details>
