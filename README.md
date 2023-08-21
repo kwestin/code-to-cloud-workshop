@@ -384,6 +384,7 @@ def title(event):
 3. Open another tab and create a new detection and copy & paste the detection and unit tests to a new one named "[Your Name]'s AWS GuardDuty High Severity Finding.
 
 **CloudTrail GuardDuty Log**
+
 ```json
 {
 "accountId": "123456789012",
@@ -427,7 +428,6 @@ def title(event):
 ```
 
 
-**Part 3 - Tune Detection with Severity Function**
 4. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
 5. Modify the rule function to alert on events from severity 1 to 10
 6. To reduce noise of this detection, use the severity function to create dynamic categorization of alerts
