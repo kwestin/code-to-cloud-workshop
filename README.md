@@ -334,6 +334,8 @@ def title(event):
 
 </details>
 
+5. Once you finish this lab, explore the GitHub Pack by navigating to "Build -> Packs" and searching for Okta. 
+
 <!--
 ``` json
 {
