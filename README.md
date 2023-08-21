@@ -226,7 +226,7 @@ Look for the action "protected_branch.destroy"
 
 <details>
 <summary> Hint 2: </summary>
-Both the ***actor*** and ***repo*** elements will provide the context.
+Both the *** actor *** and *** repo *** elements will provide the context.
 </details>
 
 
