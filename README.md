@@ -68,7 +68,7 @@ In this exercise, we will create our first detection using Python in Panther usi
 9. Next let's add more context to the alert using the ```title()``` function so that it says "A new invite was sent to [user] by [actor] for org [org name]
 
 <details>
-<summary> View Answer </summary>
+<summary> View Lab 1 Answer  </summary>
 	
 ``` python
 def rule(event):
@@ -177,7 +177,7 @@ Looking at the GitHub logs in "Investigate -> Query Builder" we notice that the 
 ![Unit Tests](/img/unit_tests_L1E2.png)  
 
 <details>
-<summary> View Example Answer  </summary>
+<summary> View Lsb 2 Answer  </summary>
 	
 ``` python
 def rule(event):
