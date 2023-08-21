@@ -375,11 +375,16 @@ def title(event):
 -->
 
 
+## Lab 4 - Tune an Existing GuardDuty Detection created by Panther
 
-## Lab 4 - Modifying Existing Rules with AWS 
 
-``` json
+**Part 1 - Clone a Managed Detection**
+1. In the Panther Console - Navigate to Build > Packs > Panther Core AWS Pack
+2. Select the AWS GuardDuty High Severity Finding
+3. Open another tab and create a new detection and copy & paste the detection and unit tests to a new one named "[Your Name]'s AWS GuardDuty High Severity Finding.
 
+**CloudTrail GuardDuty Log**
+```json
 {
 "accountId": "123456789012",
 "arn": "arn:aws:guardduty:us-west-2:123456789012:detector/111111bbbbbbbbbb5555555551111111/finding/90b82273685661b9318f078d0851fe9a",
@@ -419,7 +424,27 @@ def title(event):
 "type": "PrivilegeEscalation:IAMUser/AdministrativePermissions",
 "updatedAt": "2020-02-14T18:12:22.316Z"
 }
-
 ```
+
+
+**Part 3 - Tune Detection with Severity Function**
+4. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
+5. Modify the rule function to alert on events from severity 1 to 10
+6. To reduce noise of this detection, use the severity function to create dynamic categorization of alerts
+7. Use an IF statement to send severity 5 and below alerts to "INFO" level and 8 and above to "HIGH". For any other severity, return "MEDIUM"
+
+<details>
+	<summary>Click To View Answer </summary>
+	
+``` python
+def severity(event):
+    if float(event.get("severity",0)) <= 5.0:
+        return "INFO"
+    if float(event.get("severity",0)) >= 8.0:
+        return "HIGH"
+    else:
+        return "MEDIUM"
+```
+</details>
 
 
