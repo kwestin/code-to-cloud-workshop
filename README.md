@@ -57,9 +57,9 @@ In this exercise, we will create our first detection using Python in Panther usi
 
 1. In the Panther Console, navigate to Build > Detections > Create New
 2. Select "Rule"
-3. Under "Basic Info" enter a name in the "Name" field your new detection starting with your name. Example: "[YOUR NAME]'s New GitHub Invite"
+3. Under "Basic Info" enter a name in the "Name" field your new detection starting with your name. Example: "[YOUR NAME]'s New GitHub Invite Alert"
 4. Click "Next"
-5. Under "Log Types" type in "Okta" and select "Okta.SystemLog"
+5. Under "Log Types" type in "GitHub" and select "GitHub.Audit"
 6. Under "Set Alert Field" set the "Severity" to "Low"
 7. Next scroll down to "Unit Test" and click "Add New" copy and past the above sample JSON or from the "Investigation -> Query Builder" and past.
 8. Write a detection with the ```rule()``` function (hint: look for the "action" and "operation_type" elements in the JSON)
